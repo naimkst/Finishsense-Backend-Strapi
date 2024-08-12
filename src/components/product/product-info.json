@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_product_product_infos",
+  "info": {
+    "displayName": "Product Info",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Product": {
+      "type": "customField",
+      "options": {
+        "fields": [
+          "title",
+          "handle",
+          "vendor",
+          "variants",
+          "updated_at",
+          "template_suffix",
+          "tags",
+          "status",
+          "published_scope",
+          "published_at",
+          "product_type",
+          "options",
+          "image",
+          "images",
+          "created_at",
+          "body_html",
+          "id"
+        ]
+      },
+      "customField": "plugin::shopify-fields.single-product"
+    },
+    "InfoFiles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.product-files"
+    },
+    "ProductTab": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.product-tabs"
+    }
+  }
+}

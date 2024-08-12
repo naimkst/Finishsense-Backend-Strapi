@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_infos",
+  "info": {
+    "singularName": "product-info",
+    "pluralName": "product-infos",
+    "displayName": "Product Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product.product-info"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_product_product_files",
+  "info": {
+    "displayName": "Product Files",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "TabTitle": {
+      "type": "string"
+    },
+    "Files": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_product_tabs",
+  "info": {
+    "displayName": "Product Tabs",
+    "icon": "folder",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TabTitle": {
+      "type": "string"
+    },
+    "TabText": {
+      "type": "richtext"
+    }
+  }
+}
