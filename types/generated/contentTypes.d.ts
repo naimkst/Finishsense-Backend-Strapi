@@ -362,37 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiProductInfoProductInfo extends Schema.CollectionType {
-  collectionName: 'product_infos';
-  info: {
-    singularName: 'product-info';
-    pluralName: 'product-infos';
-    displayName: 'Product Info';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    product_info: Attribute.Component<'product.product-info'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product-info.product-info',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product-info.product-info',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -819,6 +788,161 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductInfoProductInfo extends Schema.CollectionType {
+  collectionName: 'product_infos';
+  info: {
+    singularName: 'product-info';
+    pluralName: 'product-infos';
+    displayName: 'Product Info';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    product_info: Attribute.Component<'product.product-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-info.product-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-info.product-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceResource extends Schema.CollectionType {
+  collectionName: 'resources';
+  info: {
+    singularName: 'resource';
+    pluralName: 'resources';
+    displayName: 'Resource';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    File: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    resource_folder: Attribute.Relation<
+      'api::resource.resource',
+      'manyToOne',
+      'api::resource-folder.resource-folder'
+    >;
+    resource_sub_folder: Attribute.Relation<
+      'api::resource.resource',
+      'manyToOne',
+      'api::resource-sub-folder.resource-sub-folder'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource.resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource.resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceFolderResourceFolder extends Schema.CollectionType {
+  collectionName: 'resource_folders';
+  info: {
+    singularName: 'resource-folder';
+    pluralName: 'resource-folders';
+    displayName: 'Resource Folder';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FolderName: Attribute.String;
+    resources: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    resource_sub_folders: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'manyToMany',
+      'api::resource-sub-folder.resource-sub-folder'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceSubFolderResourceSubFolder
+  extends Schema.CollectionType {
+  collectionName: 'resource_sub_folders';
+  info: {
+    singularName: 'resource-sub-folder';
+    pluralName: 'resource-sub-folders';
+    displayName: 'Resource Sub Folder';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SubFolderName: Attribute.String;
+    resources: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    resource_folders: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'manyToMany',
+      'api::resource-folder.resource-folder'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -829,7 +953,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::product-info.product-info': ApiProductInfoProductInfo;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -838,6 +961,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::product-info.product-info': ApiProductInfoProductInfo;
+      'api::resource.resource': ApiResourceResource;
+      'api::resource-folder.resource-folder': ApiResourceFolderResourceFolder;
+      'api::resource-sub-folder.resource-sub-folder': ApiResourceSubFolderResourceSubFolder;
     }
   }
 }

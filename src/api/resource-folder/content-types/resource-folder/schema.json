@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_folders",
+  "info": {
+    "singularName": "resource-folder",
+    "pluralName": "resource-folders",
+    "displayName": "Resource Folder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FolderName": {
+      "type": "string"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource.resource",
+      "mappedBy": "resource_folder"
+    },
+    "resource_sub_folders": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::resource-sub-folder.resource-sub-folder",
+      "inversedBy": "resource_folders"
+    }
+  }
+}
