@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_sub_folder_4s",
+  "info": {
+    "singularName": "resource-sub-folder-4",
+    "pluralName": "resource-sub-folder-4s",
+    "displayName": "Resource Sub Folder 4",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FolderName": {
+      "type": "string"
+    },
+    "resource_sub_folder_3s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-sub-folder-3.resource-sub-folder-3",
+      "mappedBy": "resource_sub_folder_4"
+    },
+    "resource_sub_folder_5": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder-5.resource-sub-folder-5",
+      "inversedBy": "resource_sub_folder_4s"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource.resource",
+      "mappedBy": "resource_sub_folder_4"
+    },
+    "resource_folder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-folder.resource-folder",
+      "inversedBy": "resource_sub_folder_4s"
+    },
+    "resource_sub_folder_1": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder.resource-sub-folder",
+      "inversedBy": "resource_sub_folder_4s"
+    },
+    "resource_sub_folder_2": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder-2.resource-sub-folder-2",
+      "inversedBy": "resource_sub_folder_4s"
+    }
+  }
+}

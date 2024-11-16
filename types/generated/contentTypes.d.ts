@@ -842,6 +842,26 @@ export interface ApiResourceResource extends Schema.CollectionType {
       'manyToOne',
       'api::resource-sub-folder.resource-sub-folder'
     >;
+    resource_sub_folder_2: Attribute.Relation<
+      'api::resource.resource',
+      'manyToOne',
+      'api::resource-sub-folder-2.resource-sub-folder-2'
+    >;
+    resource_sub_folder_3: Attribute.Relation<
+      'api::resource.resource',
+      'manyToOne',
+      'api::resource-sub-folder-3.resource-sub-folder-3'
+    >;
+    resource_sub_folder_4: Attribute.Relation<
+      'api::resource.resource',
+      'manyToOne',
+      'api::resource-sub-folder-4.resource-sub-folder-4'
+    >;
+    resource_sub_folder_5: Attribute.Relation<
+      'api::resource.resource',
+      'manyToOne',
+      'api::resource-sub-folder-5.resource-sub-folder-5'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -878,10 +898,30 @@ export interface ApiResourceFolderResourceFolder extends Schema.CollectionType {
       'oneToMany',
       'api::resource.resource'
     >;
-    resource_sub_folders: Attribute.Relation<
+    resource_sub_folder_1s: Attribute.Relation<
       'api::resource-folder.resource-folder',
-      'manyToMany',
+      'oneToMany',
       'api::resource-sub-folder.resource-sub-folder'
+    >;
+    resource_sub_folder_2s: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToMany',
+      'api::resource-sub-folder-2.resource-sub-folder-2'
+    >;
+    resource_sub_folder_3s: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToMany',
+      'api::resource-sub-folder-3.resource-sub-folder-3'
+    >;
+    resource_sub_folder_4s: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToMany',
+      'api::resource-sub-folder-4.resource-sub-folder-4'
+    >;
+    resource_sub_folder_5s: Attribute.Relation<
+      'api::resource-folder.resource-folder',
+      'oneToMany',
+      'api::resource-sub-folder-5.resource-sub-folder-5'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -907,7 +947,7 @@ export interface ApiResourceSubFolderResourceSubFolder
   info: {
     singularName: 'resource-sub-folder';
     pluralName: 'resource-sub-folders';
-    displayName: 'Resource Sub Folder';
+    displayName: 'Resource Sub Folder 1';
     description: '';
   };
   options: {
@@ -920,10 +960,30 @@ export interface ApiResourceSubFolderResourceSubFolder
       'oneToMany',
       'api::resource.resource'
     >;
-    resource_folders: Attribute.Relation<
+    resource_folder: Attribute.Relation<
       'api::resource-sub-folder.resource-sub-folder',
-      'manyToMany',
+      'manyToOne',
       'api::resource-folder.resource-folder'
+    >;
+    resource_sub_folder_2s: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToMany',
+      'api::resource-sub-folder-2.resource-sub-folder-2'
+    >;
+    resource_sub_folder_3s: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToMany',
+      'api::resource-sub-folder-3.resource-sub-folder-3'
+    >;
+    resource_sub_folder_4s: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToMany',
+      'api::resource-sub-folder-4.resource-sub-folder-4'
+    >;
+    resource_sub_folder_5s: Attribute.Relation<
+      'api::resource-sub-folder.resource-sub-folder',
+      'oneToMany',
+      'api::resource-sub-folder-5.resource-sub-folder-5'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -936,6 +996,254 @@ export interface ApiResourceSubFolderResourceSubFolder
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::resource-sub-folder.resource-sub-folder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceSubFolder2ResourceSubFolder2
+  extends Schema.CollectionType {
+  collectionName: 'resource_sub_folder_2s';
+  info: {
+    singularName: 'resource-sub-folder-2';
+    pluralName: 'resource-sub-folder-2s';
+    displayName: 'Resource Sub Folder 2';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FolderName: Attribute.String;
+    resource_sub_folder_3: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'manyToOne',
+      'api::resource-sub-folder-3.resource-sub-folder-3'
+    >;
+    resources: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    resource_folder: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'manyToOne',
+      'api::resource-folder.resource-folder'
+    >;
+    resource_sub_folder_1: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'manyToOne',
+      'api::resource-sub-folder.resource-sub-folder'
+    >;
+    resource_sub_folder_4s: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'oneToMany',
+      'api::resource-sub-folder-4.resource-sub-folder-4'
+    >;
+    resource_sub_folder_5s: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'oneToMany',
+      'api::resource-sub-folder-5.resource-sub-folder-5'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource-sub-folder-2.resource-sub-folder-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceSubFolder3ResourceSubFolder3
+  extends Schema.CollectionType {
+  collectionName: 'resource_sub_folder_3s';
+  info: {
+    singularName: 'resource-sub-folder-3';
+    pluralName: 'resource-sub-folder-3s';
+    displayName: 'Resource Sub Folder 3';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FolderName: Attribute.String;
+    resource_sub_folder_2s: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'oneToMany',
+      'api::resource-sub-folder-2.resource-sub-folder-2'
+    >;
+    resource_sub_folder_4: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'manyToOne',
+      'api::resource-sub-folder-4.resource-sub-folder-4'
+    >;
+    resources: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    resource_folder: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'manyToOne',
+      'api::resource-folder.resource-folder'
+    >;
+    resource_sub_folder_1: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'manyToOne',
+      'api::resource-sub-folder.resource-sub-folder'
+    >;
+    resource_sub_folder_5s: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'oneToMany',
+      'api::resource-sub-folder-5.resource-sub-folder-5'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource-sub-folder-3.resource-sub-folder-3',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceSubFolder4ResourceSubFolder4
+  extends Schema.CollectionType {
+  collectionName: 'resource_sub_folder_4s';
+  info: {
+    singularName: 'resource-sub-folder-4';
+    pluralName: 'resource-sub-folder-4s';
+    displayName: 'Resource Sub Folder 4';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FolderName: Attribute.String;
+    resource_sub_folder_3s: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'oneToMany',
+      'api::resource-sub-folder-3.resource-sub-folder-3'
+    >;
+    resource_sub_folder_5: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'manyToOne',
+      'api::resource-sub-folder-5.resource-sub-folder-5'
+    >;
+    resources: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    resource_folder: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'manyToOne',
+      'api::resource-folder.resource-folder'
+    >;
+    resource_sub_folder_1: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'manyToOne',
+      'api::resource-sub-folder.resource-sub-folder'
+    >;
+    resource_sub_folder_2: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'manyToOne',
+      'api::resource-sub-folder-2.resource-sub-folder-2'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource-sub-folder-4.resource-sub-folder-4',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceSubFolder5ResourceSubFolder5
+  extends Schema.CollectionType {
+  collectionName: 'resource_sub_folder_5s';
+  info: {
+    singularName: 'resource-sub-folder-5';
+    pluralName: 'resource-sub-folder-5s';
+    displayName: 'Resource Sub Folder 5';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FolderName: Attribute.String;
+    resource_sub_folder_4s: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'oneToMany',
+      'api::resource-sub-folder-4.resource-sub-folder-4'
+    >;
+    resources: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    resource_folder: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'manyToOne',
+      'api::resource-folder.resource-folder'
+    >;
+    resource_sub_folder_1: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'manyToOne',
+      'api::resource-sub-folder.resource-sub-folder'
+    >;
+    resource_sub_folder_2: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'manyToOne',
+      'api::resource-sub-folder-2.resource-sub-folder-2'
+    >;
+    resource_sub_folder_3: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'manyToOne',
+      'api::resource-sub-folder-3.resource-sub-folder-3'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource-sub-folder-5.resource-sub-folder-5',
       'oneToOne',
       'admin::user'
     > &
@@ -965,6 +1273,10 @@ declare module '@strapi/types' {
       'api::resource.resource': ApiResourceResource;
       'api::resource-folder.resource-folder': ApiResourceFolderResourceFolder;
       'api::resource-sub-folder.resource-sub-folder': ApiResourceSubFolderResourceSubFolder;
+      'api::resource-sub-folder-2.resource-sub-folder-2': ApiResourceSubFolder2ResourceSubFolder2;
+      'api::resource-sub-folder-3.resource-sub-folder-3': ApiResourceSubFolder3ResourceSubFolder3;
+      'api::resource-sub-folder-4.resource-sub-folder-4': ApiResourceSubFolder4ResourceSubFolder4;
+      'api::resource-sub-folder-5.resource-sub-folder-5': ApiResourceSubFolder5ResourceSubFolder5;
     }
   }
 }

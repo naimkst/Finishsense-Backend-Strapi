@@ -34,6 +34,30 @@
       "relation": "manyToOne",
       "target": "api::resource-sub-folder.resource-sub-folder",
       "inversedBy": "resources"
+    },
+    "resource_sub_folder_2": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder-2.resource-sub-folder-2",
+      "inversedBy": "resources"
+    },
+    "resource_sub_folder_3": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder-3.resource-sub-folder-3",
+      "inversedBy": "resources"
+    },
+    "resource_sub_folder_4": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder-4.resource-sub-folder-4",
+      "inversedBy": "resources"
+    },
+    "resource_sub_folder_5": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource-sub-folder-5.resource-sub-folder-5",
+      "inversedBy": "resources"
     }
   }
 }

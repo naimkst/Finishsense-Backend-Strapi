@@ -21,11 +21,35 @@
       "target": "api::resource.resource",
       "mappedBy": "resource_folder"
     },
-    "resource_sub_folders": {
+    "resource_sub_folder_1s": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::resource-sub-folder.resource-sub-folder",
-      "inversedBy": "resource_folders"
+      "mappedBy": "resource_folder"
+    },
+    "resource_sub_folder_2s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-sub-folder-2.resource-sub-folder-2",
+      "mappedBy": "resource_folder"
+    },
+    "resource_sub_folder_3s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-sub-folder-3.resource-sub-folder-3",
+      "mappedBy": "resource_folder"
+    },
+    "resource_sub_folder_4s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-sub-folder-4.resource-sub-folder-4",
+      "mappedBy": "resource_folder"
+    },
+    "resource_sub_folder_5s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-sub-folder-5.resource-sub-folder-5",
+      "mappedBy": "resource_folder"
     }
   }
 }
