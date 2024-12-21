@@ -60,6 +60,31 @@ export interface ProductProductTabs extends Schema.Component {
   attributes: {
     TabTitle: Attribute.String;
     TabText: Attribute.RichText;
+    Products: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::shopify-fields.multiple-products',
+        {
+          fields: [
+            'body_html',
+            'created_at',
+            'handle',
+            'images',
+            'image',
+            'options',
+            'product_type',
+            'published_at',
+            'published_scope',
+            'status',
+            'tags',
+            'template_suffix',
+            'title',
+            'updated_at',
+            'variants',
+            'vendor',
+            'id'
+          ];
+        }
+      >;
   };
 }
 
