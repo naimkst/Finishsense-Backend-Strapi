@@ -1,9 +1,9 @@
 "use strict";
 
 /**
- * resource controller
+ * category-1 controller
  */
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-module.exports = createCoreController("api::resource.resource");
+module.exports = createCoreController("api::category.category");

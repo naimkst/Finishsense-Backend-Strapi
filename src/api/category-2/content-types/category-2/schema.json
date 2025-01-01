@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_2s",
+  "info": {
+    "singularName": "category-2",
+    "pluralName": "category-2s",
+    "displayName": "Category 2",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "category_1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category-1.category-1"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource.resource"
+    }
+  }
+}

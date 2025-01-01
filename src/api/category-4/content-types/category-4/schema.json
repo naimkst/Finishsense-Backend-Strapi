@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_4s",
+  "info": {
+    "singularName": "category-4",
+    "pluralName": "category-4s",
+    "displayName": "Category 4",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "category_3": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category-3.category-3"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource.resource"
+    }
+  }
+}
