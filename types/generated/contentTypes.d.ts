@@ -894,9 +894,9 @@ export interface ApiCategory2Category2 extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    category_1: Attribute.Relation<
+    category_1s: Attribute.Relation<
       'api::category-2.category-2',
-      'oneToOne',
+      'oneToMany',
       'api::category-1.category-1'
     >;
     resources: Attribute.Relation<
@@ -935,9 +935,9 @@ export interface ApiCategory3Category3 extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    category_2: Attribute.Relation<
+    category_2s: Attribute.Relation<
       'api::category-3.category-3',
-      'oneToOne',
+      'oneToMany',
       'api::category-2.category-2'
     >;
     resources: Attribute.Relation<
@@ -976,9 +976,9 @@ export interface ApiCategory4Category4 extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    category_3: Attribute.Relation<
+    category_3s: Attribute.Relation<
       'api::category-4.category-4',
-      'oneToOne',
+      'oneToMany',
       'api::category-3.category-3'
     >;
     resources: Attribute.Relation<
@@ -1017,9 +1017,9 @@ export interface ApiCategory5Category5 extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    category_4: Attribute.Relation<
+    category_4s: Attribute.Relation<
       'api::category-5.category-5',
-      'oneToOne',
+      'oneToMany',
       'api::category-4.category-4'
     >;
     resources: Attribute.Relation<

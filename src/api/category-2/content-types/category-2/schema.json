@@ -15,9 +15,9 @@
     "Name": {
       "type": "string"
     },
-    "category_1": {
+    "category_1s": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::category-1.category-1"
     },
     "resources": {
